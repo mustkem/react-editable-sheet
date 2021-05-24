@@ -8,7 +8,8 @@ const tasks = [
   "Markup Completed",
   "Initial model data integration Completed",
   "Create editable cell Completed",
-  "Make cell controlled - In progress",
+  "Make cell controlled - Completed",
+  "Update data in parent - In progress",
   "Persist to local storage",
   "Add row on right click",
   "Add column on right click",
@@ -24,7 +25,7 @@ function App() {
             {
               tasks.map(item => {
                 return (
-                  <li>{item}</li>
+                  <li key={item}>{item}</li>
                 )
               })
             }

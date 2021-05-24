@@ -7,3 +7,8 @@
     height: 100%;
 }
 
+.cellFocused{
+    border:1px solid blue !important;
+    outline: 0;
+}
+

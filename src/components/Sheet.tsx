@@ -14,21 +14,22 @@ function Sheet() {
         <div className={styles.sheetContainer}>
             <Table>
                 <thead>
-                    <tr>
-                        <th></th>
-                        {Object.keys(data[0]).map(item => (<th>{item} </th>))}
+                    <tr key="header" >
+                        <th key="default-column"></th>
+                        {Object.keys(data[0]).map(item => (<th key={item}>{item} </th>))}
                     </tr>
                 </thead>
                 <tbody>
                     {
                         data.map((item: any, index: any) => {
                             return (
-                                <tr>
-                                    <td>{index + 1}</td>
+                                <tr key={index}>
+                                    <td key="indexing">{index + 1}</td>
                                     {
-                                        Object.keys(item).map(key => {
+                                        Object.keys(item).map((key, j) => {
+                                            console.log()
                                             return (
-                                                <td><Cell item={item[key]} /></td>
+                                                <td key={index + j}><Cell item={item[key]} /></td>
                                             )
                                         })
                                     }
