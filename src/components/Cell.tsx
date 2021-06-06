@@ -4,25 +4,30 @@ import styles from '../Sheet.module.css';
 
 function Cell(props: any) {
     const {
-        item
+        item,
+        index,
+        dataKey,
+        handleChange
     } = props;
     const [data, setData] = useState(item);
     const [isFocus, setIsFocus] = useState(false);
 
-    const handleChange = (e: any) => {
+    const handleInputChange = (e: any) => {
         setData(e.target.innerHTML);
     }
+    
     const handleFocus = () => {
         setIsFocus(true);
 
     }
     const handleBlur = () => {
         setIsFocus(false);
+        handleChange(index, dataKey, data)
     }
     return (
         <div
             className={isFocus ? styles.cellFocused : ""}
-            onInput={handleChange}
+            onInput={handleInputChange}
             onBlur={handleBlur}
             onFocus={handleFocus}
             suppressContentEditableWarning={true}
