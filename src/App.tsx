@@ -10,8 +10,9 @@ const tasks = [
   "Create editable cell Completed",
   "Make cell controlled - Completed",
   "Update data in parent - Cimpleted",
-  "Add debouncing in progress",
-  "Persist to local storage",
+  "Add debouncing in progress - Save data few moments after user stopped typing - Completed",
+  "Persist to local storage - In progress",
+  "Check feasibility for third party package for contentEditable",
   "Add row on right click",
   "Add column on right click",
 ]

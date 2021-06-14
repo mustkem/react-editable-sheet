@@ -11,11 +11,20 @@ function Cell(props: any) {
     } = props;
     const [data, setData] = useState(item);
     const [isFocus, setIsFocus] = useState(false);
+    const [timeOutId, setTimeoutId] = useState<any>(setTimeout(() => { }));
+
 
     const handleInputChange = (e: any) => {
+
         setData(e.target.innerHTML);
+
+        clearTimeout(timeOutId);
+        setTimeoutId(setTimeout(() => {
+            //save data 1000 second after user has stopped typing 
+            handleChange(index, dataKey, data)
+        }, 1000));
     }
-    
+
     const handleFocus = () => {
         setIsFocus(true);
 
@@ -24,6 +33,7 @@ function Cell(props: any) {
         setIsFocus(false);
         handleChange(index, dataKey, data)
     }
+
     return (
         <div
             className={isFocus ? styles.cellFocused : ""}

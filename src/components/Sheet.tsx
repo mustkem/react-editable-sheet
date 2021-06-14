@@ -10,14 +10,16 @@ import styles from '../Sheet.module.css';
 
 function Sheet() {
     const [data, setData] = useState<any>(initialData);
+    const [dataToBeSaved, setDataToBeSaved] = useState<any>(JSON.parse(JSON.stringify(initialData)));
+
     const handleChange = (index: any, key: any, value: any) => {
-        const updatedData = [...data];
+        const updatedData = [...dataToBeSaved];
 
         updatedData[index][key] = value;
 
-        setData(updatedData);
+        setDataToBeSaved(updatedData);
     }
-    console.log("data ",data)
+    console.log("data ",dataToBeSaved)
     return (
         <div className={styles.sheetContainer}>
             <Table>
