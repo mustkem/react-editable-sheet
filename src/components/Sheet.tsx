@@ -9,7 +9,14 @@ import styles from '../Sheet.module.css';
 
 
 function Sheet() {
-    const [data, setData] = useState<any>(initialData);
+    const [data, setData] = useState<any>(() => {
+        if (localStorage.getItem('mySheetData')) {
+            const sheetData = localStorage.getItem('mySheetData') || "";
+            return JSON.parse(sheetData);
+        } else {
+            return initialData
+        }
+    });
     const [dataToBeSaved, setDataToBeSaved] = useState<any>(JSON.parse(JSON.stringify(initialData)));
 
     const handleChange = (index: any, key: any, value: any) => {
@@ -18,8 +25,13 @@ function Sheet() {
         updatedData[index][key] = value;
 
         setDataToBeSaved(updatedData);
+
+        localStorage.setItem('mySheetData', JSON.stringify(updatedData));
+
+        console.log("Saved");
+
     }
-    console.log("data ",dataToBeSaved)
+   
     return (
         <div className={styles.sheetContainer}>
             <Table>

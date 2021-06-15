@@ -9,10 +9,10 @@ const tasks = [
   "Initial model data integration Completed",
   "Create editable cell Completed",
   "Make cell controlled - Completed",
-  "Update data in parent - Cimpleted",
+  "Update data in parent - Completed",
   "Add debouncing in progress - Save data few moments after user stopped typing - Completed",
-  "Persist to local storage - In progress",
-  "Check feasibility for third party package for contentEditable",
+  "Persist to local storage - Completed",
+  "Check feasibility for third party package for contentEditable - In Progress",
   "Add row on right click",
   "Add column on right click",
 ]

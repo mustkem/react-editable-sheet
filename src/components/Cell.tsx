@@ -36,7 +36,7 @@ function Cell(props: any) {
 
     return (
         <div
-            className={isFocus ? styles.cellFocused : ""}
+            className={`${isFocus ? styles.cellFocused : ""} cell-content`}
             onInput={handleInputChange}
             onBlur={handleBlur}
             onFocus={handleFocus}

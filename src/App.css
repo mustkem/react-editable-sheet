@@ -24,3 +24,8 @@ table th{
 table th:last-child{
   border-right: 1px solid rgb(222, 226, 230);
 }
+table .cell-content{
+  width: 200px;
+  background:aliceblue;
+}
+
