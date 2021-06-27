@@ -69,6 +69,8 @@ function Sheet() {
 
                 </tbody>
             </Table>
+        <button>Add Row</button>
+
         </div>
     )
 }
